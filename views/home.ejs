@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<h1>Home</h1>
+<p><%= homeParagraph %></p>
+
+<!-- <% for (let i = 0; i < composePosts.length; i++) { %>
+    <h2><%= composePosts[i].title %></h2>
+    <p><%= composePosts[i].postText %></p>
+<% }; %> -->
+
+<% composePosts.forEach((element) => { %>
+    <h2><%= element.title %></h2>
+    <p><%= element.postText.substring(0, 100) + "... " %><a href="/post/<%=element.title.toLowerCase().replace(/\s/g, "-")%>">Read More.</a></p>
+<% }); %>
+
+<%- include('partials/footer') %>
